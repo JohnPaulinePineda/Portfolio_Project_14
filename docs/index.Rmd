@@ -1775,7 +1775,7 @@ CS_C50_Test
                                                reference = CS_C50_Test$CS_C50_Observed))
 
 ```
-## 1.7 Evaluation Summary
+## 1.6 Evaluation Summary
 |
 | Model performance comparison:
 |
@@ -1903,7 +1903,7 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 
 ```
 
-##  1.8 References
+##  1.7 References
 |
 | **[Book]** [Applied Predictive Modeling](http://appliedpredictivemodeling.com/) by Max Kuhn and Kjell Johnson
 | **[Book]** [An Introduction to Statistical Learning](https://www.statlearning.com/) by Gareth James, Daniela Witten, Trevor Hastie and Rob Tibshirani
