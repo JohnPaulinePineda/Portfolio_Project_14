@@ -1969,6 +1969,8 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 | **[Article]** [Cost-Sensitive Learning](https://ml-concepts.com/2021/10/08/3-cost-sensitive-learning/) by Sourabh Gupta
 | **[Article]** [Cost-Sensitive Classification](https://mlr.mlr-org.com/articles/tutorial/cost_sensitive_classif.html) by MLR Org Team
 | **[Publication]** [Support Vector Regression Machines](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) by Harris Drucker, Chris Burges, Linda Kaufman, Alex Smola and Vladimir Vapnik (Advances in Neural Information Processing Systems)
+| **[Publication]** [Classification and Regression Trees](https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6) by Leo Breiman, Jerome Friedman, Richard Olshen, and Charles Stone (Computer Science)
+| **[Publication]** [ C4.5: Programs for Machine Learning](https://link.springer.com/article/10.1007/BF00993309) by Ross Quinlan
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
