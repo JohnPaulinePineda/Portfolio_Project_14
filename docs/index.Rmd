@@ -946,6 +946,8 @@ featurePlot(x = EDA.Predictors.Numeric,
 
 ###  1.5.1 Support Vector Machine - Radial Basis Function Kernel (SVM_R)
 |
+| [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that maximally separates the different classes by a maximally large margin (which is defined as the distance between the hyperplane and the closest data points from each class). The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved discrimination.
+|
 | **[A]** The support vector machine (radial basis function kernel) model from the  <mark style="background-color: #CCECFF">**kernlab**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. This version of the model applied uniform case weights between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:1). 
 |
 | **[B]** The model contains 2 hyperparameters:
@@ -1074,6 +1076,8 @@ SVM_R_Test
 ```
 
 ###  1.5.2 Class-Weighted Support Vector Machine - Radial Basis Function Kernel (CW_SVM_R)
+|
+| [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that maximally separates the different classes by a maximally large margin (which is defined as the distance between the hyperplane and the closest data points from each class). The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved discrimination.
 |
 | **[A]** The support vector machine (radial basis function kernel) model from the  <mark style="background-color: #CCECFF">**kernlab**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. This version of the model applied non-uniform case weights between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:4). 
 |
@@ -1964,6 +1968,7 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 | **[Article]** [Cost-Sensitive Learning for Imbalanced Classification](https://machinelearningmastery.com/cost-sensitive-learning-for-imbalanced-classification/) by Jason Brownlee
 | **[Article]** [Cost-Sensitive Learning](https://ml-concepts.com/2021/10/08/3-cost-sensitive-learning/) by Sourabh Gupta
 | **[Article]** [Cost-Sensitive Classification](https://mlr.mlr-org.com/articles/tutorial/cost_sensitive_classif.html) by MLR Org Team
+| **[Publication]** [Support Vector Regression Machines](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) by Harris Drucker, Chris Burges, Linda Kaufman, Alex Smola and Vladimir Vapnik (Advances in Neural Information Processing Systems)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
