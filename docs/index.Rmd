@@ -1079,6 +1079,8 @@ SVM_R_Test
 |
 | [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that maximally separates the different classes by a maximally large margin (which is defined as the distance between the hyperplane and the closest data points from each class). The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved discrimination.
 |
+| [Class Weighting](https://arxiv.org/abs/2010.05995) assigns higher misclassification penalties to training instances of the minority class. The algorithm would not tend to skew the modeling estimation process towards cases from the minority class to reduce the total misclassifications, as this set of instances are now assigned with a higher misclassification penalty.
+|
 | **[A]** The support vector machine (radial basis function kernel) model from the  <mark style="background-color: #CCECFF">**kernlab**</mark> package was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. This version of the model applied non-uniform case weights between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:4). 
 |
 | **[B]** The model contains 2 hyperparameters:
@@ -1985,7 +1987,8 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 | **[Article]** [Cost-Sensitive Learning and the Class Imbalance Problem](https://www.csd.uwo.ca/~xling/papers/cost_sensitive.pdf) by Charles Ling and Victor Sheng
 | **[Publication]** [Support Vector Regression Machines](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) by Harris Drucker, Chris Burges, Linda Kaufman, Alex Smola and Vladimir Vapnik (Advances in Neural Information Processing Systems)
 | **[Publication]** [Classification and Regression Trees](https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6) by Leo Breiman, Jerome Friedman, Richard Olshen, and Charles Stone (Computer Science)
-| **[Publication]** [ C4.5: Programs for Machine Learning](https://link.springer.com/article/10.1007/BF00993309) by Ross Quinlan
+| **[Publication]** [C4.5: Programs for Machine Learning](https://link.springer.com/article/10.1007/BF00993309) by Ross Quinlan
+| **[Publication]** [Class-Weighted Evaluation Metrics for Imbalanced Data Classification](https://arxiv.org/abs/2010.05995) by Akhilesh Gupta, Nesime Tatbul, Ryan Marcus, Shengtian Zhou, Insup Lee and Justin Gottschlich (Arxiv Cornell University)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
