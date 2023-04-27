@@ -1490,6 +1490,9 @@ CS_CART_Test
 
 ###  1.5.5 C5.0 Decision Trees (C50)
 |
+| [C5.0 Decision Trees](https://link.springer.com/article/10.1007/BF00993309) generates multi-branch trees in a situation where one or more nominal inputs are given, using an information-based criterion (Entropy and Information Gain) as an attribute selection measure to build decision trees. For overfitting avoidance, the algorithm applies a pessimistic 
+pruning approach called Rule-post pruning, to remove unreliable branches from the decision tree to reduce the size of the tree without any loss of its predictive accuracy. The Rule-post pruning starts off by converting a decision tree to an equivalent set of rules, then based on statistical confidence estimations for error rate it evaluates the rules with the aim of simplifying them without affecting the accuracy, adopting the Binomial Confidence Limit method. In a case of handling missing values, the algorithm allows to whether estimate missing values as a function of other attributes or apportions the case probabilistically among the results.
+|
 | **[A]** The C5.0 decision trees model from the  <mark style="background-color: #CCECFF">**C50**</mark> and <mark style="background-color: #CCECFF">**plyr**</mark> packages was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. This version of the model applied uniform case weights between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:1). 
 |
 | **[B]** The model contains 3 hyperparameters:
@@ -1636,6 +1639,9 @@ C50_Test
 ```
 
 ###  1.5.6 Cost-Sensitive C5.0 Decision Trees (CS_C50)
+|
+| [C5.0 Decision Trees](https://link.springer.com/article/10.1007/BF00993309) generates multi-branch trees in a situation where one or more nominal inputs are given, using an information-based criterion (Entropy and Information Gain) as an attribute selection measure to build decision trees. For overfitting avoidance, the algorithm applies a pessimistic 
+pruning approach called Rule-post pruning, to remove unreliable branches from the decision tree to reduce the size of the tree without any loss of its predictive accuracy. The Rule-post pruning starts off by converting a decision tree to an equivalent set of rules, then based on statistical confidence estimations for error rate it evaluates the rules with the aim of simplifying them without affecting the accuracy, adopting the Binomial Confidence Limit method. In a case of handling missing values, the algorithm allows to whether estimate missing values as a function of other attributes or apportions the case probabilistically among the results.
 |
 | **[A]** The C5.0 decision trees model from the  <mark style="background-color: #CCECFF">**C50**</mark> and <mark style="background-color: #CCECFF">**plyr**</mark> packages was implemented through the <mark style="background-color: #CCECFF">**caret**</mark> package. This version of the model applied non-uniform case weights between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:4). 
 |

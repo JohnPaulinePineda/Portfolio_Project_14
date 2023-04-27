@@ -8728,53 +8728,51 @@ model is summarized as follows:<br />
 <div id="c5.0-decision-trees-c50" class="section level3">
 <h3>1.5.5 C5.0 Decision Trees (C50)</h3>
 <div class="line-block"><br />
-<strong>[A]</strong> The C5.0 decision trees model from the
+<a href="https://link.springer.com/article/10.1007/BF00993309">C5.0
+Decision Trees</a> generates multi-branch trees in a situation where one
+or more nominal inputs are given, using an information-based criterion
+(Entropy and Information Gain) as an attribute selection measure to
+build decision trees. For overfitting avoidance, the algorithm applies a
+pessimistic</div>
+<p>pruning approach called Rule-post pruning, to remove unreliable
+branches from the decision tree to reduce the size of the tree without
+any loss of its predictive accuracy. The Rule-post pruning starts off by
+converting a decision tree to an equivalent set of rules, then based on
+statistical confidence estimations for error rate it evaluates the rules
+with the aim of simplifying them without affecting the accuracy,
+adopting the Binomial Confidence Limit method. In a case of handling
+missing values, the algorithm allows to whether estimate missing values
+as a function of other attributes or apportions the case
+probabilistically among the results. | | <strong>[A]</strong> The C5.0
+decision trees model from the
 <mark style="background-color: #CCECFF"><strong>C50</strong></mark> and
 <mark style="background-color: #CCECFF"><strong>plyr</strong></mark>
 packages was implemented through the
 <mark style="background-color: #CCECFF"><strong>caret</strong></mark>
 package. This version of the model applied uniform case weights between
-the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:1).<br />
-<br />
-<strong>[B]</strong> The model contains 3 hyperparameters:<br />
-     <strong>[B.1]</strong> <span style="color: #FF0000">trials</span> =
-number of boosting iterations made to vary across a range of values
-equal to 1 to 100<br />
-     <strong>[B.2]</strong> <span style="color: #FF0000">model</span> =
-model type made to vary across a range of levels equal to TREE and
-RULES<br />
-     <strong>[B.3]</strong> <span style="color: #FF0000">winnow</span> =
-winnow made to vary across a range of levels equal to TRUE and
-FALSE<br />
-<br />
+the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:1). | | <strong>[B]</strong> The
+model contains 3 hyperparameters: | <strong>[B.1]</strong> <span style="color: #FF0000">trials</span> = number of boosting iterations
+made to vary across a range of values equal to 1 to 100 |
+<strong>[B.2]</strong> <span style="color: #FF0000">model</span> = model
+type made to vary across a range of levels equal to TREE and RULES |
+<strong>[B.3]</strong> <span style="color: #FF0000">winnow</span> =
+winnow made to vary across a range of levels equal to TRUE and FALSE | |
 <strong>[C]</strong> Specificity was particularly used as the metric for
 assessment to compare the effect of cost-sensitive learning to the
-minority class.<br />
-<br />
-<strong>[D]</strong> The cross-validated model performance of the final
-model is summarized as follows:<br />
-     <strong>[D.1]</strong> Final model configuration involves trials=1,
-model=TREE and winnow=FALSE<br />
-     <strong>[D.2]</strong> Specificity = 0.55000<br />
-<br />
-<strong>[E]</strong> The model allows for ranking of predictors in terms
-of variable importance. The top-performing predictors in the model are
-as follows:<br />
-     <strong>[E.1]</strong> <span style="color: #FF0000">V11</span>
-variable (numeric)<br />
-     <strong>[E.2]</strong> <span style="color: #FF0000">V49</span>
-variable (numeric)<br />
-     <strong>[E.3]</strong> <span style="color: #FF0000">V37</span>
-variable (numeric)<br />
-     <strong>[E.4]</strong> <span style="color: #FF0000">V17</span>
-variable (numeric)<br />
-     <strong>[E.5]</strong> <span style="color: #FF0000">V20</span>
-variable (numeric)<br />
-<br />
+minority class. | | <strong>[D]</strong> The cross-validated model
+performance of the final model is summarized as follows: |
+<strong>[D.1]</strong> Final model configuration involves trials=1,
+model=TREE and winnow=FALSE | <strong>[D.2]</strong> Specificity =
+0.55000 | | <strong>[E]</strong> The model allows for ranking of
+predictors in terms of variable importance. The top-performing
+predictors in the model are as follows: | <strong>[E.1]</strong> <span style="color: #FF0000">V11</span> variable (numeric) |
+<strong>[E.2]</strong> <span style="color: #FF0000">V49</span> variable
+(numeric) | <strong>[E.3]</strong> <span style="color: #FF0000">V37</span> variable (numeric) |
+<strong>[E.4]</strong> <span style="color: #FF0000">V17</span> variable
+(numeric) | <strong>[E.5]</strong> <span style="color: #FF0000">V20</span> variable (numeric) | |
 <strong>[F]</strong> The independent test model performance of the final
-model is summarized as follows:<br />
-     <strong>[F.1]</strong> Specificity = 0.14286<br />
-</div>
+model is summarized as follows: | <strong>[F.1]</strong> Specificity =
+0.14286 |</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="do">##################################</span></span>
 <span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifying the class distribution</span></span>
 <span id="cb152-3"><a href="#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="co"># for the original data</span></span>
@@ -9249,53 +9247,51 @@ model is summarized as follows:<br />
 <div id="cost-sensitive-c5.0-decision-trees-cs_c50" class="section level3">
 <h3>1.5.6 Cost-Sensitive C5.0 Decision Trees (CS_C50)</h3>
 <div class="line-block"><br />
-<strong>[A]</strong> The C5.0 decision trees model from the
+<a href="https://link.springer.com/article/10.1007/BF00993309">C5.0
+Decision Trees</a> generates multi-branch trees in a situation where one
+or more nominal inputs are given, using an information-based criterion
+(Entropy and Information Gain) as an attribute selection measure to
+build decision trees. For overfitting avoidance, the algorithm applies a
+pessimistic</div>
+<p>pruning approach called Rule-post pruning, to remove unreliable
+branches from the decision tree to reduce the size of the tree without
+any loss of its predictive accuracy. The Rule-post pruning starts off by
+converting a decision tree to an equivalent set of rules, then based on
+statistical confidence estimations for error rate it evaluates the rules
+with the aim of simplifying them without affecting the accuracy,
+adopting the Binomial Confidence Limit method. In a case of handling
+missing values, the algorithm allows to whether estimate missing values
+as a function of other attributes or apportions the case
+probabilistically among the results. | | <strong>[A]</strong> The C5.0
+decision trees model from the
 <mark style="background-color: #CCECFF"><strong>C50</strong></mark> and
 <mark style="background-color: #CCECFF"><strong>plyr</strong></mark>
 packages was implemented through the
 <mark style="background-color: #CCECFF"><strong>caret</strong></mark>
 package. This version of the model applied non-uniform case weights
-between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:4).<br />
-<br />
-<strong>[B]</strong> The model contains 3 hyperparameters:<br />
-     <strong>[B.1]</strong> <span style="color: #FF0000">trials</span> =
-number of boosting iterations made to vary across a range of values
-equal to 1 to 100<br />
-     <strong>[B.2]</strong> <span style="color: #FF0000">model</span> =
-model type made to vary across a range of levels equal to TREE and
-RULES<br />
-     <strong>[B.3]</strong> <span style="color: #FF0000">winnow</span> =
-winnow made to vary across a range of levels equal to TRUE and
-FALSE<br />
-<br />
+between the classes of the response variable (<span style="color: #FF0000">Class=M</span>:1, <span style="color: #FF0000">Class=R</span>:4). | | <strong>[B]</strong> The
+model contains 3 hyperparameters: | <strong>[B.1]</strong> <span style="color: #FF0000">trials</span> = number of boosting iterations
+made to vary across a range of values equal to 1 to 100 |
+<strong>[B.2]</strong> <span style="color: #FF0000">model</span> = model
+type made to vary across a range of levels equal to TREE and RULES |
+<strong>[B.3]</strong> <span style="color: #FF0000">winnow</span> =
+winnow made to vary across a range of levels equal to TRUE and FALSE | |
 <strong>[C]</strong> Specificity was particularly used as the metric for
 assessment to compare the effect of cost-sensitive learning to the
-minority class.<br />
-<br />
-<strong>[D]</strong> The cross-validated model performance of the final
-model is summarized as follows:<br />
-     <strong>[D.1]</strong> Final model configuration involves trials=1,
-model=TREE and winnow=FALSE<br />
-     <strong>[D.2]</strong> Specificity = 0.55000<br />
-<br />
-<strong>[E]</strong> The model allows for ranking of predictors in terms
-of variable importance. The top-performing predictors in the model are
-as follows:<br />
-     <strong>[E.1]</strong> <span style="color: #FF0000">V11</span>
-variable (numeric)<br />
-     <strong>[E.2]</strong> <span style="color: #FF0000">V49</span>
-variable (numeric)<br />
-     <strong>[E.3]</strong> <span style="color: #FF0000">V37</span>
-variable (numeric)<br />
-     <strong>[E.4]</strong> <span style="color: #FF0000">V17</span>
-variable (numeric)<br />
-     <strong>[E.5]</strong> <span style="color: #FF0000">V20</span>
-variable (numeric)<br />
-<br />
+minority class. | | <strong>[D]</strong> The cross-validated model
+performance of the final model is summarized as follows: |
+<strong>[D.1]</strong> Final model configuration involves trials=1,
+model=TREE and winnow=FALSE | <strong>[D.2]</strong> Specificity =
+0.55000 | | <strong>[E]</strong> The model allows for ranking of
+predictors in terms of variable importance. The top-performing
+predictors in the model are as follows: | <strong>[E.1]</strong> <span style="color: #FF0000">V11</span> variable (numeric) |
+<strong>[E.2]</strong> <span style="color: #FF0000">V49</span> variable
+(numeric) | <strong>[E.3]</strong> <span style="color: #FF0000">V37</span> variable (numeric) |
+<strong>[E.4]</strong> <span style="color: #FF0000">V17</span> variable
+(numeric) | <strong>[E.5]</strong> <span style="color: #FF0000">V20</span> variable (numeric) | |
 <strong>[F]</strong> The independent test model performance of the final
-model is summarized as follows:<br />
-     <strong>[F.1]</strong> Specificity = 0.14286<br />
-</div>
+model is summarized as follows: | <strong>[F.1]</strong> Specificity =
+0.14286 |</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="do">##################################</span></span>
 <span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifying the class distribution</span></span>
 <span id="cb173-3"><a href="#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="co"># for the original data</span></span>
@@ -10405,6 +10401,11 @@ Classification</a> by MLR Org Team<br />
 Vector Regression Machines</a> by Harris Drucker, Chris Burges, Linda
 Kaufman, Alex Smola and Vladimir Vapnik (Advances in Neural Information
 Processing Systems)<br />
+<strong>[Publication]</strong> <a href="https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6">Classification
+and Regression Trees</a> by Leo Breiman, Jerome Friedman, Richard
+Olshen, and Charles Stone (Computer Science)<br />
+<strong>[Publication]</strong> <a href="https://link.springer.com/article/10.1007/BF00993309">C4.5:
+Programs for Machine Learning</a> by Ross Quinlan<br />
 <strong>[Course]</strong> <a href="https://online.stat.psu.edu/stat508/">Applied Data Mining and
 Statistical Learning</a> by Penn State Eberly College of Science<br />
 <strong>[Course]</strong> <a href="https://online.stat.psu.edu/stat501/">Regression Methods</a> by
