@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ```
 # **1. Table of Contents**
 |
-| This document presents a non-exhaustive list of cost-sensitive learning procedures applied for severe class imbalance using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>. 
+| This project explores different cost-sensitive procedures for handling imbalanced data for classification using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>. Methods applied in the analysis to address imbalanced data included model structures which support cost-sensitive learning, namely **Class-Weighted Support Vector Machine**, **Cost-Sensitive Classification and Regression Trees** and **Cost-Sensitive C5.0 Decision Trees**. The resulting predictions derived from the candidate models were evaluated in terms of their discrimination power on the minority class using the specificity metric. The specificity values were compared to those of the baseline models without cost-sensitive learning applied.
 |
 | Cost-sensitive learning and class weights address imbalanced classification problems when the cost of missing a minority class case might be different than incorrectly classifying an example from the majority class. In cost-sensitive learning, instead of each instance being either correctly or incorrectly classified, each class (or instance) is given a misclassification cost. Thus, instead of trying to optimize the accuracy, the problem is then to minimize the total misclassification cost. Meanwhile, class weights are adjustments made to reduce the bias towards the most occurring categories in the data and compensate for the underrepresentation of the minority class by increasing the importance on correctly identifying examples from this group. The algorithms applied in this study (mostly contained in the <mark style="background-color: #CCECFF">**caret**</mark> package) attempt to learn models on imbalanced data that have uneven penalties or costs when making predictions.
 |
@@ -1799,10 +1799,10 @@ CS_C50_Test
 |
 | Model performance comparison:
 |
-| **[A]** The model which demonstrated the most consistent improvement in specificity metric after cost-sensitive training is as follows:
-|      **[A.1]** SVM_R: Support Vector Machine - Radial Basis Function Kernel
+| **[A]** The models which demonstrated the most consistent improvement in specificity metric after cost-sensitive training is as follows:
+|      **[A.1]** **SVM_R: Support Vector Machine - Radial Basis Function Kernel**
 |             **[A.1.1]** Test Specificity = 0.14286, Cross-Validation Specificity = 0.60000
-|      **[A.2]** CW_SVM_R: Class-Weighted Support Vector Machine - Radial Basis Function Kernel ()
+|      **[A.2]** **CW_SVM_R: Class-Weighted Support Vector Machine - Radial Basis Function Kernel**
 |             **[A.2.1]** Test Specificity = 0.28571, Cross-Validation Specificity = 0.65000
 |
 ```{r section_1.7, warning=FALSE, message=FALSE}
