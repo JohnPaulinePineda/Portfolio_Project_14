@@ -36,6 +36,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |      **[B.2]** 60/61 predictors = All remaining variables (60/60 numeric)
 |     
 | 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.1, warning=FALSE, message=FALSE}
 ##################################
 # Loading R libraries
@@ -119,6 +122,9 @@ PDA <- Sonar_Train
 )
 
 ```
+
+</details>
+
 ##  1.2 Data Quality Assessment
 |
 | Data quality assessment:
@@ -148,6 +154,10 @@ PDA <- Sonar_Train
 |
 | **[D]** No high skewness noted for any variable with Skewness>3 or Skewness<(-3).
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -364,6 +374,9 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 }
 
 ```
+
+</details>
+
 ##  1.3 Data Preprocessing
 
 ###  1.3.1 Outlier
@@ -410,6 +423,10 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 |      **[A.38]** <span style="color: #FF0000">V59</span> variable (6 outliers detected)
 |      **[A.39]** <span style="color: #FF0000">V60</span> variable (3 outliers detected)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.1, warning=FALSE, message=FALSE, fig.width=15, fig.height=3}
 ##################################
 # Loading dataset
@@ -460,6 +477,9 @@ print(paste0(NumericPredictorWithOutlierCount, " numeric variable(s) were noted 
 dim(DPA.Predictors.Numeric)
 
 ```
+
+</details>
+
 ###  1.3.2 Zero and Near-Zero Variance
 |
 | Zero and near-zero variance data assessment:
@@ -468,6 +488,10 @@ dim(DPA.Predictors.Numeric)
 |
 | **[B]** No low variance noted for any variables using a preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package. The <span style="color: #0000FF">nearZeroVar</span> method using both the <span style="color: #0000FF">freqCut</span> and <span style="color: #0000FF">uniqueCut</span> criteria set at 95/5 and 10, respectively, were applied on the dataset.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -534,12 +558,19 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 } 
 
 ```
+
+</details>
+
 ###  1.3.3 Collinearity
 |
 | High collinearity data assessment:
 |
 | **[A]** No high correlation > 95% were noted for any variable as confirmed using the preprocessing summaries from the <mark style="background-color: #CCECFF">**caret**</mark> and <mark style="background-color: #CCECFF">**lares**</mark> packages.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.3, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -640,12 +671,19 @@ if (DPA_HighlyCorrelatedCount > 0) {
 }
 
 ```
+
+</details>
+
 ###  1.3.4 Linear Dependencies
 |
 | Linear dependency data assessment:
 |
 | **[A]** No linear dependencies noted for any subset of variables using the preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package applying the <span style="color: #0000FF">findLinearCombos</span> method which utilizes the QR decomposition of a matrix to enumerate sets of linear combinations (if they exist). 
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -733,12 +771,18 @@ if (DPA_LinearlyDependentCount > 0) {
 
 ```
 
+</details>
+
 ###  1.3.5 Shape Transformation
 |
 | Data transformation assessment:
 |
 | **[A]** A number of numeric variables in the dataset were observed to be right-skewed which required shape transformation for data distribution stability. Considering that all numeric variables were strictly positive values, the <span style="color: #0000FF">BoxCox</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was used to transform their distributional shapes.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.5, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -773,12 +817,18 @@ dim(DPA_BoxCoxTransformed)
 
 ```
 
+</details>
+
 ###  1.3.6 Centering and Scaling
 |
 | Centering and scaling data assessment:
 |
 | **[A]** To maintain numerical stability during modelling, centering and scaling transformations were applied on the transformed numeric variables. The <span style="color: #0000FF">center</span> method from the <mark style="background-color: #CCECFF">**caret**</mark> package was implemented which subtracts the average value of a numeric variable to all the values. As a result of centering, the variables had zero mean values. In addition, the <span style="color: #0000FF">scale</span> method, also from the <mark style="background-color: #CCECFF">**caret**</mark> package, was applied which performs a center transformation with each value of the variable divided by its standard deviation. Scaling the data coerced the values to have a common standard deviation of one.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.6, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -819,6 +869,8 @@ dim(DPA.Predictors.Numeric_BoxCoxTransformed_CenteredScaledTransformed)
 
 ```
 
+</details>
+
 ###  1.3.7 Pre-Processed Dataset
 |
 | Preliminary dataset assessment:
@@ -839,6 +891,10 @@ dim(DPA.Predictors.Numeric_BoxCoxTransformed_CenteredScaledTransformed)
 |      **[C.4]** No predictors removed due to high correlation
 |      **[C.5]** No predictors removed due to linear dependencies
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.7, warning=FALSE, message=FALSE}
 ##################################
 # Creating the pre-modelling
@@ -892,6 +948,9 @@ PMA_PreModelling_Test <- PMA_Test_BoxCoxTransformed_CenteredScaledTransformed
 dim(PMA_PreModelling_Test)
 
 ```
+
+</details>
+
 ## 1.4 Data Exploration
 |
 | Exploratory data analysis:
@@ -911,6 +970,10 @@ dim(PMA_PreModelling_Test)
 |      **[A.12]** <span style="color: #FF0000">V50</span> variable (numeric)
 |      **[A.13]** <span style="color: #FF0000">V51</span> variable (numeric)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -942,6 +1005,8 @@ featurePlot(x = EDA.Predictors.Numeric,
 
 ```
 
+</details>
+
 ## 1.5 Cost-Sensitive Learning Applied for Class Imbalance
 
 ###  1.5.1 Support Vector Machine - Radial Basis Function Kernel (SVM_R)
@@ -965,6 +1030,10 @@ featurePlot(x = EDA.Predictors.Numeric,
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.14286
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.1, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1075,6 +1144,8 @@ SVM_R_Test
 
 ```
 
+</details>
+
 ###  1.5.2 Class-Weighted Support Vector Machine - Radial Basis Function Kernel (CW_SVM_R)
 |
 | [Support Vector Machine](http://www.cs.cmu.edu/~pakyan/compbio/references/Drucker_NIPS_1996.pdf) plots each observation in an N-dimensional space corresponding to the number of features in the data set and finds a hyperplane that maximally separates the different classes by a maximally large margin (which is defined as the distance between the hyperplane and the closest data points from each class). The algorithm applies kernel transformation by mapping non-linearly separable data using the similarities between the points in a high-dimensional feature space for improved discrimination.
@@ -1098,6 +1169,10 @@ SVM_R_Test
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.28571
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.2, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1208,6 +1283,8 @@ CW_SVM_R_Test
 
 ```
 
+</details>
+
 ###  1.5.3 Classification and Regression Trees (CART)
 |
 | [Classification and Regression Trees](https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6) construct binary trees for both both nominal and continuous input attributes using Gini Index as its splitting criteria. The algorithm handles missing values by surrogating tests to approximate outcomes. In the pruning phase, CART uses pre-pruning technique called Cost-Complexity pruning to remove redundant branches from the decision tree to improve the accuracy. In the first stage, a sequence of increasingly smaller trees are built on the training data. In the second stage, one of these tree is chosen as the pruned tree, based on its classification accuracy on a pruning set, adopting a cross-validated method in its pruning technique.
@@ -1233,6 +1310,10 @@ CW_SVM_R_Test
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.28571
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.3, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1351,6 +1432,8 @@ CART_Test
 
 ```
 
+</details>
+
 ###  1.5.4 Cost-Sensitive Classification and Regression Trees (CS_CART)
 |
 | [Classification and Regression Trees](https://www.semanticscholar.org/paper/Classification-and-Regression-Trees-Breiman-Friedman/8017699564136f93af21575810d557dba1ee6fc6) construct binary trees for both both nominal and continuous input attributes using Gini Index as its splitting criteria. The algorithm handles missing values by surrogating tests to approximate outcomes. In the pruning phase, CART uses pre-pruning technique called Cost-Complexity pruning to remove redundant branches from the decision tree to improve the accuracy. In the first stage, a sequence of increasingly smaller trees are built on the training data. In the second stage, one of these tree is chosen as the pruned tree, based on its classification accuracy on a pruning set, adopting a cross-validated method in its pruning technique.
@@ -1378,6 +1461,10 @@ CART_Test
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.71428
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.4, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1496,6 +1583,8 @@ CS_CART_Test
 
 ```
 
+</details>
+
 ###  1.5.5 C5.0 Decision Trees (C50)
 |
 | [C5.0 Decision Trees](https://link.springer.com/article/10.1007/BF00993309) generate multi-branch trees in a situation where one or more nominal inputs are given, using an information-based criterion (Entropy and Information Gain) as an attribute selection measure to build decision trees. For overfitting avoidance, the algorithm applies a pessimistic pruning approach called Rule-post pruning, to remove unreliable branches from the decision tree to reduce the size of the tree without any loss of its predictive accuracy. The Rule-post pruning starts off by converting a decision tree to an equivalent set of rules, then based on statistical confidence estimations for error rate it evaluates the rules with the aim of simplifying them without affecting the accuracy, adopting the Binomial Confidence Limit method. In a case of handling missing values, the algorithm allows to whether estimate missing values as a function of other attributes or apportions the case probabilistically among the results.
@@ -1523,6 +1612,10 @@ CS_CART_Test
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.14286
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.5, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1645,6 +1738,8 @@ C50_Test
 
 ```
 
+</details>
+
 ###  1.5.6 Cost-Sensitive C5.0 Decision Trees (CS_C50)
 |
 | [C5.0 Decision Trees](https://link.springer.com/article/10.1007/BF00993309) generate multi-branch trees in a situation where one or more nominal inputs are given, using an information-based criterion (Entropy and Information Gain) as an attribute selection measure to build decision trees. For overfitting avoidance, the algorithm applies a pessimistic pruning approach called Rule-post pruning, to remove unreliable branches from the decision tree to reduce the size of the tree without any loss of its predictive accuracy. The Rule-post pruning starts off by converting a decision tree to an equivalent set of rules, then based on statistical confidence estimations for error rate it evaluates the rules with the aim of simplifying them without affecting the accuracy, adopting the Binomial Confidence Limit method. In a case of handling missing values, the algorithm allows to whether estimate missing values as a function of other attributes or apportions the case probabilistically among the results.
@@ -1674,6 +1769,10 @@ C50_Test
 | **[F]** The independent test model performance of the final model is summarized as follows:
 |      **[F.1]** Specificity = 0.14286
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.6, warning=FALSE, message=FALSE}
 ##################################
 # Verifying the class distribution
@@ -1795,6 +1894,9 @@ CS_C50_Test
                                                reference = CS_C50_Test$CS_C50_Observed))
 
 ```
+
+</details>
+
 ## 1.6 Evaluation Summary
 |
 | Model performance comparison:
@@ -1805,6 +1907,10 @@ CS_C50_Test
 |      **[A.2]** **CW_SVM_R: Class-Weighted Support Vector Machine - Radial Basis Function Kernel**
 |             **[A.2.1]** Test Specificity = 0.28571, Cross-Validation Specificity = 0.65000
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.7, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating all evaluation results
@@ -1922,6 +2028,8 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 (COST_COMPARISON_TEST_SUMMARY <- as.data.frame(COST_COMPARISON_TEST_SUMMARY))
 
 ```
+
+</details>
 
 # **2. References**
 |
