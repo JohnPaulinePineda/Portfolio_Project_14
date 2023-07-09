@@ -1,5 +1,5 @@
 ---
-title: "R : Cost-Sensitive Learning for Severe Class Imbalance"
+title: "Supervised Learning : Cost-Sensitive Learning for Severe Class Imbalance"
 author: "John Pauline Pineda"
 date: "December 13, 2022"
 output: 
