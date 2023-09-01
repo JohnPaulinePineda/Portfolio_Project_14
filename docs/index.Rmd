@@ -1885,9 +1885,9 @@ CS_C50_Test
 |
 | **[B]** The model which demonstrated the most consistent improvement in specificity metric after cost-sensitive training is as follows:
 |      **[B.1]** **SVM_R: Support Vector Machine - Radial Basis Function Kernel**
-|             **[A.1.1]** Test Specificity = 0.14286, Cross-Validation Specificity = 0.60000
+|             **[B.1.1]** Test Specificity = 0.14286, Cross-Validation Specificity = 0.60000
 |      **[B.2]** **CW_SVM_R: Class-Weighted Support Vector Machine - Radial Basis Function Kernel**
-|             **[A.2.1]** Test Specificity = 0.28571, Cross-Validation Specificity = 0.65000
+|             **[B.2.1]** Test Specificity = 0.28571, Cross-Validation Specificity = 0.65000
 |
 |
 
