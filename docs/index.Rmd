@@ -1,6 +1,6 @@
 ---
 title: "Supervised Learning : Cost-Sensitive Learning for Severe Class Imbalance"
-author: "John Pauline Pineda"
+author: "<b><a href='https://github.com/JohnPaulinePineda'>John Pauline Pineda</a></b>"
 date: "December 13, 2022"
 output: 
   html_document:
@@ -57,7 +57,7 @@ library(pls)
 library(corrplot)
 library(tidyverse)
 library(lares)
-library(DMwR)
+library(DMwR2)
 library(gridExtra)
 library(rattle)
 library(rpart.plot)
@@ -75,6 +75,7 @@ library(mda)
 library(klaR)
 library(pamr)
 library(MLmetrics)
+library(C50)
 
 ##################################
 # Loading source and
@@ -2015,7 +2016,7 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 |
 # **2. Summary** <a name="summary"></a>
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_14/docs/Project14_Summary.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_14/images/Project14_Summary.png)
 |
 # **3. References**
 |
@@ -2037,7 +2038,7 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 | **[R Package]** [corrplot](https://cran.r-project.org/web/packages/corrplot/corrplot.pdf) by Taiyun Wei
 | **[R Package]** [tidyverse](https://cran.r-project.org/web/packages/tidyverse/tidyverse.pdf) by Hadley Wickham
 | **[R Package]** [lares](https://cran.rstudio.com/web/packages/lares/lares.pdf) by Bernardo Lares
-| **[R Package]** [DMwR](https://mran.microsoft.com/snapshot/2016-05-02/web/packages/DMwR/DMwR.pdf) by Luis Torgo
+| **[R Package]** [DMwR2](https://mran.microsoft.com/snapshot/2016-05-02/web/packages/DMwR/DMwR.pdf) by Luis Torgo
 | **[R Package]** [gridExtra](https://cran.r-project.org/web/packages/gridExtra/gridExtra.pdf) by Baptiste Auguie and Anton Antonov
 | **[R Package]** [rattle](https://cran.r-project.org/web/packages/rattle/rattle.pdf) by Graham Williams
 | **[R Package]** [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot/rpart.plot.pdf) by Stephen Milborrow
@@ -2054,6 +2055,8 @@ colnames(COST_COMPARISON_TEST_SUMMARY) <- c("Specificity")
 | **[R Package]** [mda](https://cran.r-project.org/web/packages/mda/mda.pdf) by Trevor Hastie
 | **[R Package]** [klaR](https://cran.r-project.org/web/packages/klaR/klaR.pdf) by Christian Roever, Nils Raabe, Karsten Luebke, Uwe Ligges, Gero Szepannek, Marc Zentgraf and David Meyer
 | **[R Package]** [pamr](https://cran.r-project.org/web/packages/pamr/pamr.pdf) by Trevor Hastie, Rob Tibshirani, Balasubramanian Narasimhan and Gil Chu
+| **[R Package]** [MLmetrics](https://cran.r-project.org/web/packages/MLmetrics/MLmetrics.pdf) by Yachen Yan
+| **[R Package]** [C50](https://cran.r-project.org/web/packages/C50/C50.pdf) by Mak Kuhn
 | **[Article]** [The caret Package](https://topepo.github.io/caret/index.html) by Max Kuhn
 | **[Article]** [A Short Introduction to the caret Package](https://cran.r-project.org/web/packages/caret/vignettes/caret.html) by Max Kuhn
 | **[Article]** [Caret Package – A Practical Guide to Machine Learning in R](https://www.machinelearningplus.com/machine-learning/caret-package/#:~:text=Caret%20is%20short%20for%20Classification%20And%20REgression%20Training.,track%20of%20which%20algorithm%20resides%20in%20which%20package.) by Selva Prabhakaran
